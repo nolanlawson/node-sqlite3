@@ -2,10 +2,7 @@
   "includes": [ "deps/common-sqlite.gypi" ],
   "variables": {
       "sqlite%"        : "internal",
-      "sqlite_libname%": "sqlite3",
-      "host%"          : "https://mapbox-node-binary.s3.amazonaws.com",
-      "remote_path%"   : "./{name}/v{version}/{toolset}/",
-      "package_name%"  : "{node_abi}-{platform}-{arch}.tar.gz"
+      "sqlite_libname%": "sqlite3"
   },
   "targets": [
     {
