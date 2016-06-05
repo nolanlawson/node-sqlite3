@@ -45,7 +45,7 @@
       "copies": [
           {
             "files": [ "<(PRODUCT_DIR)/node_sqlite3.node" ],
-            "destination": "./lib/binding/{node_abi}-{platform}-{arch}"
+            "destination": "./lib/binding/46-linux-mipsel"
           }
       ]
     }
