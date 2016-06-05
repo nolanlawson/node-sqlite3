@@ -8,7 +8,6 @@
       "host%"          : "https://mapbox-node-binary.s3.amazonaws.com",
       "remote_path%"   : "./{name}/v{version}/{toolset}/",
       "package_name%"  : "{node_abi}-{platform}-{arch}.tar.gz"
-}
   },
   "targets": [
     {
