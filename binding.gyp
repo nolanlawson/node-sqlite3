@@ -3,15 +3,13 @@
   "variables": {
       "sqlite%"        : "internal",
       "sqlite_libname%": "sqlite3",
-      "module_name%"   : "node_sqlite3",
-      "module_path%"   : "./lib/binding/{node_abi}-{platform}-{arch}",
       "host%"          : "https://mapbox-node-binary.s3.amazonaws.com",
       "remote_path%"   : "./{name}/v{version}/{toolset}/",
       "package_name%"  : "{node_abi}-{platform}-{arch}.tar.gz"
   },
   "targets": [
     {
-      "target_name": "<(module_name)",
+      "target_name": "node_sqlite3",
       "include_dirs": ["<!(node -e \"require('nan')\")"],
       "conditions": [
         ["sqlite != 'internal'", {
@@ -46,11 +44,11 @@
     {
       "target_name": "action_after_build",
       "type": "none",
-      "dependencies": [ "<(module_name)" ],
+      "dependencies": [ "node_sqlite3" ],
       "copies": [
           {
-            "files": [ "<(PRODUCT_DIR)/<(module_name).node" ],
-            "destination": "<(module_path)"
+            "files": [ "<(PRODUCT_DIR)/node_sqlite3.node" ],
+            "destination": "./lib/binding/{node_abi}-{platform}-{arch}"
           }
       ]
     }
